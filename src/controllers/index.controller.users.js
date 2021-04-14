@@ -68,29 +68,10 @@ function authenticateToken(req,res,next) {
     })
 }
 
-const authenticateAdmin = (req,res,next) =>{
-    const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1]
-    if(token ==null) return res.sendStatus(401)
-
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, medic) =>{
-        const medicId = medic.id
-        const idExists = (await pool.query('SELECT * FROM medics WHERE id = $1',[medicId])).rowCount >0
-        
-        if(!idExists){
-            return res.sendStatus(401)
-        }
-        else{
-            next()
-        }
-    })
-}
-
 module.exports ={
     createUser,
     loginUser,
     displayUsers,
     authenticateToken,
-    authenticateAdmin,
     test
 }

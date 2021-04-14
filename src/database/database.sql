@@ -22,6 +22,18 @@ CREATE TABLE users(
     tipoCancer varchar(255),
 )
 
+CREATE TABLE dailyRegister(
+    id int,
+    date varchar(255),
+    hid varchar(255),
+    hungry varchar(255),
+    mood int,
+    run varchar(255),
+    sad int,
+    social varchar(255),
+    PRIMARY KEY(id,date)
+);
+
 CREATE TABLE symptoms(
     date varchar(255),
     grade int,
@@ -70,5 +82,5 @@ WHERE id = 1
 	"password":"123"
 }
 
-medic "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWlndWVsIiwiaWQiOjEyMzQsImlhdCI6MTYxODQyMTI0OH0.ZRij2igfdadlJjGxydl-iTkmr6dFso6ekjD2Ju1gbG4"
+medic "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWlndWVsIiwiaWQiOjk5OSwiaWF0IjoxNjE4NDI1MDA5fQ.zKvG0QyZWDVEMD4ei39AKSGskEVbFNSNuWrS3oxGmtE"
 */
